@@ -1,1 +1,35 @@
+Linux Users
 
+Check the current user 
+- whoami
+
+Use the below command to add a new user to the system
+adduser user_name (This command takes most of the info required at the time of creating the user) : Requires root
+
+To look for all the users in our system:
+sudo cat /etc/passwd
+
+O/P:-
+thor:x:1001:1001:,,,:/home/thor:/bin/bash
+x  means your password is stored in a separate file called shadow.(/etc/shadow)
+1001 is his id(uid) and second 1001 is his group id(gid)
+
+Check below cmd to see the password file 
+sudo cat /etc/shadow
+O/P :- thor:$y$j9T$O50o13GsRwEs0Vl.WHy5P.$KYYTDYKb0I6RyTBikwwzBSxUlmf/GJ2JCK9oPEHDAL6:18795:0:99999:7:::    (Hashed version)
+
+Adding a user with a lazy cmd:
+sudo useradd ironman
+
+/etc/passwd file
+O/P:- ironman:x:1002:1002::/home/ironman:/bin/sh
+
+Use below to add password to ironman
+sudo passwd ironman
+
+Now we change the shell of ironman from sh to bash:-
+sudo usermod ironman --shell /bin/bash
+sudo cat /etc/passwd
+O/P:- ironman:x:1002:1002::/home/ironman:/bin/bash
+
+To add a home directory use:-
