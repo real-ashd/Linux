@@ -101,3 +101,103 @@ thanos ALL = ALL
 save and exit the file
 Thanos user now have all access to the linux system.
 
+
+
+
+
+
+
+Change user to thanos
+sudo su - thanos
+Add user maw using thanos
+sudo useradd maw -m (and password)
+O/P:- thanos:x:1008:1008::/home/thanos:/bin/sh
+maw:x:1009:1009::/home/maw:/bin/sh
+
+To delete a user:
+sudo userdel username
+We delete thor:
+sudo userdel thor
+cat /etc/passwd
+O/P:-user176701:x:1000:1000:,,,:/home/user176701:/bin/bash
+ironman:x:1002:1002::/home/ironman:/bin/bash
+hulk:x:1003:1003::/home/hulk:/bin/sh
+spiderman:x:1004:1004::/home/spiderman:/bin/sh
+loki:x:1005:1005::/home/loki:/bin/sh
+captainamerica:x:1006:1006::/home/captainamerica:/bin/sh
+drstrange:x:1007:1007::/home/drstrange:/bin/sh
+thanos:x:1008:1008::/home/thanos:/bin/sh
+maw:x:1009:1009::/home/maw:/bin/sh
+
+Now we delete users spiderman and drstrange
+sudo userdel spiderman
+sudo userdel drstrange
+cat /etc/passwd
+O/P:- user176701:x:1000:1000:,,,:/home/user176701:/bin/bash
+ironman:x:1002:1002::/home/ironman:/bin/bash
+hulk:x:1003:1003::/home/hulk:/bin/sh
+loki:x:1005:1005::/home/loki:/bin/sh
+captainamerica:x:1006:1006::/home/captainamerica:/bin/sh
+thanos:x:1008:1008::/home/thanos:/bin/sh
+maw:x:1009:1009::/home/maw:/bin/sh
+
+Groups in Linux:
+To check what groups are you a member of use cmd:
+groups
+O/P:- 
+└──╼ $groups
+user176701 sudo
+
+
+Creating a Group in Linux:
+To add a group use cmd:
+sudo groupadd infinitygauntlet
+Now we cat /etc/group file
+O/P:- user176701:x:1000:
+ironman:x:1002:
+hulk:x:1003:
+loki:x:1005:
+captainamerica:x:1006:
+thanos:x:1008:
+maw:x:1009:
+infinitygauntlet:x:1010:		(Newly created)
+
+Add infinitygauntlet group to our sudoers file to give it sudo access.
+sudo visudo
+Edit after %sudo line (sudo group):
+%infinitygauntlet ALL=NOPASSWD:ALL
+
+If you mess something up while saving the file it will give you syntax error as a failsafe.
+Now infinitygauntlet group has sudo powers.
+Let's get ironman infinitygauntlet group.
+
+Firstly we check if ironman can bring spiderman back without it.
+
+ironman@htb-duofxkoclh:/home$ useradd spiderman -m
+useradd: Permission denied.
+useradd: cannot lock /etc/passwd; try again later.
+ironman@htb-duofxkoclh:/home$ sudo useradd spiderman -m
+[sudo] password for ironman: 
+ironman is not in the sudoers file.  This incident will be reported.
+ironman@htb-duofxkoclh:/home$ 
+
+login with sudo access to modify ironman's access.
+sudo usermod -aG infinitygauntlet ironman	(-G will overwrite other groups of ironman whereas -aG will append the group you add now)
+
+Check in cat /etc/group file:
+user176701:x:1000:
+ironman:x:1002:
+hulk:x:1003:
+loki:x:1005:
+captainamerica:x:1006:
+thanos:x:1008:
+maw:x:1009:
+infinitygauntlet:x:1010:ironman
+
+Add infinitygauntlet group to thanos.
+sudo usermod -aG infinitygauntlet thanos
+O/P:- infinitygauntlet:x:1010:ironman,thanos
+
+Removing user from a group cmd:
+sudo gpasswd -d thanos	(-d for delete)
+
