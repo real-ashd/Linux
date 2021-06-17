@@ -1,0 +1,62 @@
+Linux
+
+Human -> Terminal (Keyboard, Monitor) -> Shell -> Kernel -> OS
+
+Bash (Bourne Again Shell)
+
+which shell we are using?
+Bash Shell
+ps command Output :
+PID TTY          TIME CMD
+  20416 pts/0    00:00:00 bash
+  22360 pts/0    00:00:00 ps
+
+PowerShell 
+ps command Output :
+PID TTY          TIME CMD
+  22762 pts/1    00:00:00 pwsh
+  22948 pts/1    00:00:00 ps
+
+$ = user
+# = root power
+
+New Commands
+id (Your id info)
+hostname (your host's name)
+uname (Linux)
+uname --help
+ifconfig (Network Stuff)
+ip (More Network Stuff)
+netstat(Network Status)
+ss (Session Stuff)
+ps (Process Stuff)
+who (Who else is login to the system)
+env (Environment Variable)
+lsblk (List Blocks - Hard Drive Stuff)
+lsusb(USB's plugged in)
+lsof (Open files in your system)
+man command (Consult your man)
+apropos 
+
+
+
+
+
+Commands
+
+pwd
+echo
+sudo
+clear
+cd
+ls
+cat  (cat << eof > stream.txt) using as input in a file (> is used to overwrite the file and >> is used to append in the file)
+less
+grep
+sort
+mv
+cp
+rm
+mkdir
+rmdir
+chmod
