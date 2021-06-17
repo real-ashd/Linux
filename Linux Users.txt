@@ -3,6 +3,8 @@ Linux Users
 Check the current user 
 - whoami
 
+sudo = super user do
+
 Use the below command to add a new user to the system
 adduser user_name (This command takes most of the info required at the time of creating the user) : Requires root
 
@@ -32,4 +34,70 @@ sudo usermod ironman --shell /bin/bash
 sudo cat /etc/passwd
 O/P:- ironman:x:1002:1002::/home/ironman:/bin/bash
 
-To add a home directory use:-
+ironman still doesn't have a home directory for him
+cd /home
+ls
+O/P:- thor  user176701
+
+Changing the name of the user with 'usermod -l':
+sudo usermod -l tonystark ironman
+O/P:- tonystark:x:1002:1002::/home/ironman:/bin/bash
+
+Addiing users hulk, spiderman, loki, captainamerica and drstrange
+sudo useradd hulk -m (-m for adding a home directory)
+sudo useradd spiderman -m
+sudo useradd loki -m
+sudo useradd captainamerica -m
+sudo useradd drstrange -m
+cat /etc/passwd
+O/P:-
+thor:x:1001:1001:,,,:/home/thor:/bin/bash
+ironman:x:1002:1002::/home/ironman:/bin/bash
+hulk:x:1003:1003::/home/hulk:/bin/sh
+spiderman:x:1004:1004::/home/spiderman:/bin/sh
+loki:x:1005:1005::/home/loki:/bin/sh
+captainamerica:x:1006:1006::/home/captainamerica:/bin/sh
+drstrange:x:1007:1007::/home/drstrange:/bin/sh
+
+We will add thanos as a user and set his password:
+sudo useradd thanos -m
+sudo passwd thanos
+
+sudo is like an infinity gauntlet:
+we have sudo access but the new users created do not.
+
+Change your user account using su - user_name(by default it is root):
+But we don't have the root password so we can use sudo
+su -
+Password: 
+O/P:- su: Authentication failure
+$sudo su -
+┌─[root@htb-duofxkoclh]─[~]
+└──╼ #
+Now '#' means we are root user
+So we logout now to become ironman
+If we use sudo su - ironman we don't need the password.
+but here we login with password
+
+If we try to add new user pepperpotts with ironman as user 'sudo useradd pepperpotts' it says:
+ironman is not in the sudoers file.  This incident will be reported.
+ 
+sudoers file defines who can use sudo.
+Be careful editing sudoers file.
+logout and use your account with sudo permission on.
+
+To Open 'SUDO' file use cmd:
+sudo visudo
+It will open sudo file
+
+Page down
+%sudo is a group
+Add thanos user in sudoers file.
+To give him permission to useradd add below text after root line in sudo file:
+thanos ALL = /sbin/useradd	(Gives thanos access to one command)
+
+To give thanos all permissions add text:
+thanos ALL = ALL
+save and exit the file
+Thanos user now have all access to the linux system.
+
