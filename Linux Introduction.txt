@@ -50,7 +50,9 @@ sudo
 clear
 cd    ('cd -' will take you to the last previous directory you were in)
 ls ('ls -' will display the contents of your home directory, 'ls ..' will print the contents of your parent directory)
+  If we type 'ls ' and press tab twice, it will show us what folders we can ls into
 cat  (cat << eof > stream.txt) using as input in a file (> is used to overwrite the file and >> is used to append in the file)
+  If we type 'cd ' and press tab twice, it will show us what folders we can change into
 less
 grep
 sort
