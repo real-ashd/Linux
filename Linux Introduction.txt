@@ -63,11 +63,11 @@ chmod
 
 
 Creating hardlinks and softlinks:
-To create a hardlink of a file follow the below syntax
-ln original_filename hardlink_name  (This contains the same inode as original and its contents)
+To create a hardlink of a file follow the below syntax:   
+ln original_filename hardlink_name  (This contains the same inode as original and its contents)   (We can also use path to specify a location)
 
-To create a softlink(shortcut) of a file follow the below syntax
-ln -s original_filename softlink_name (This contains different inode than the original file and doesn't have its contents)
+To create a softlink(shortcut) of a file follow the below syntax:
+ln -s original_filename softlink_name (This contains different inode than the original file and doesn't have its contents)  (We can also use path to specify a location)
 
 We can create a softlink for a directory but not a hardlink.
 Softlink for a dir can be created with below syntax:
