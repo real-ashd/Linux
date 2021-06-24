@@ -49,7 +49,7 @@ echo
 sudo
 clear
 cd    ('cd -' will take you to the last previous directory you were in)
-ls
+ls ('ls -' will display the contents of your home directory, 'ls ..' will print the contents of your parent directory)
 cat  (cat << eof > stream.txt) using as input in a file (> is used to overwrite the file and >> is used to append in the file)
 less
 grep
