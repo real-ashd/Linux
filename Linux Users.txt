@@ -196,8 +196,23 @@ infinitygauntlet:x:1010:ironman
 
 Add infinitygauntlet group to thanos.
 sudo usermod -aG infinitygauntlet thanos
+Now we cat /etc/group file
 O/P:- infinitygauntlet:x:1010:ironman,thanos
 
 Removing user from a group cmd:
-sudo gpasswd -d thanos	(-d for delete)
+sudo gpasswd -d thanos	infinitygauntlet(-d for delete)
+Now we cat /etc/group file
+O/P:- infinitygauntlet:x:1010:ironman
 
+Adding the users we lost:
+change user to ironman
+sudo useradd spiderman -m
+sudo useradd drstrange -m
+
+Deleting user thanos
+sudo userdel thanos
+
+Deleting a group:(This only deletes the group and not the users)
+sudo groupdel infinitygauntlet
+
+ironman's preiviliges are gone.
