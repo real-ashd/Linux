@@ -79,3 +79,17 @@ Using '-' filters
 -R : recursive
 -i : Prompt check
 -v : Verbose  (What the command did)
+
+Keyboard Shortcuts:
+'Ctrl + A' will take you to the start of the cmd
+'Ctrl + D' will delete the letter at the cursor
+'Ctrl + E' will take you to the end of the cmd
+'Ctrl + B' will take you one space back
+'Ctrl + F' will take you one space forward
+'Ctrl + U' will cut the text to the left of cursor
+'Ctrl + K' will cut the text to the right of cursor
+'Ctrl + Y' will paste the text which was cut
+
+'Alt + F' will jump the cursor to one word forward  (May not work)
+'Alt + B' will jump the cursor to one word backward
+'Alt + U' will change the word to the right to uppercase
