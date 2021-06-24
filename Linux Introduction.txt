@@ -48,7 +48,7 @@ pwd
 echo
 sudo
 clear
-cd
+cd    ('cd -' will take you to the last previous directory you were in)
 ls
 cat  (cat << eof > stream.txt) using as input in a file (> is used to overwrite the file and >> is used to append in the file)
 less
