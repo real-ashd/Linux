@@ -41,7 +41,8 @@ history (This command will show you the history of all the commands you used in 
   You can use it by '!cmd_number' and the system will execute the command of that number
   'history 10' will show you the last 10 commands
   To edit the history goto /home and ls -a you will find '.bash_history'. This contains all the commands
-
+head
+tail
 
 
 
