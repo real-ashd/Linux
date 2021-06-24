@@ -72,3 +72,8 @@ ln -s original_filename softlink_name (This contains different inode than the or
 We can create a softlink for a directory but not a hardlink.
 Softlink for a dir can be created with below syntax:
 ln -s original_dirname softlink_name
+
+Using '-' filters
+-R : recursive
+-i : Prompt check
+-v : Verbose  (What the command did)
