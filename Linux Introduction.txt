@@ -37,7 +37,9 @@ lsusb(USB's plugged in)
 lsof (Open files in your system)
 man command (Consult your man)
 apropos 
-
+history (This command will show you the history of all the commands you used in your system)
+  You can use it by '!cmd_number' and the system will execute the command of that number
+  'history 10' will show you the last 10 commands
 
 
 
