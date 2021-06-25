@@ -97,3 +97,11 @@ Keyboard Shortcuts:
 'Alt + F' will jump the cursor to one word forward  (May not work)
 'Alt + B' will jump the cursor to one word backward
 'Alt + U' will change the word to the right to uppercase
+
+
+Types of commands: (Can be found in your bin directory)
+1. Executable Programs - cp command   (Diamond shaped icon)
+2. Shell builtins - cd command
+3. Shell Scripts - Programmable scripts(A cmd can be a shell script)
+4. Alias - ls command
+
