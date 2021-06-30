@@ -36,3 +36,8 @@ we can also use multiple '?' eg: 'cp file???.txt dir1'
 Combining '?' and '*'
 eg : 'cp f?l*.txt dir1'
 
+
+
+
+
+Checkout more wildcards and aliases.
