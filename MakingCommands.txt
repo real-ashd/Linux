@@ -1,3 +1,20 @@
 We can execute multiple commands in one line by using ';'
 syntax - cmd1; cmd2; cmd3;cmd4;
 
+eg:
+┌─[user176701@htb-uizr6ouzip]─[~]
+└──╼ $cd Desktop/;ls
+htb_vpn_logs.log  my_credentials.txt  README.license
+┌─[user176701@htb-uizr6ouzip]─[~/Desktop]
+└──╼ $ls;cat my_credentials.txt ;
+htb_vpn_logs.log  my_credentials.txt  README.license
+Username: user176701
+Password: 1Hs3oqlB
+┌─[user176701@htb-uizr6ouzip]─[~/Desktop]
+└──╼ $ls;echo "--------------------";cat my_credentials.txt ;
+htb_vpn_logs.log  my_credentials.txt  README.license
+--------------------
+Username: user176701
+Password: 1Hs3oqlB
+
+
