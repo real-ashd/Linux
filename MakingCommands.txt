@@ -1,4 +1,4 @@
-We can execute multiple commands in one line by using ';'
+We can execute multiple commands in one line by using ';' or '&&'
 syntax - cmd1; cmd2; cmd3;cmd4;
 
 eg:
@@ -17,4 +17,22 @@ htb_vpn_logs.log  my_credentials.txt  README.license
 Username: user176701
 Password: 1Hs3oqlB
 
+1.Order of the command matters
+2.';' will select only valid commands and ignore invalid command.
+3.'&&' will ignore all the commands after the first invalid command.
+
+
+Wildcard:
+'*' - it represents all characters
+if we use command 'cp * dir1' then all the files in current folder will be copied to dir1 directory.
+if we use command 'rm * dir1' then all files in dir1 will be removed.
+if we want to copy all text files in current folder in dir1 use 'cp *.txt dir1'
+'cp n*e dir1' will copy all files whose name start from 'n' and endswith 'e'.
+
+'?' - it represents a signle character
+if we use cmd 'cp file?.txt dir' it will copy all text files whose name starts with file and contain any single charater after that(file1.txt,file2.txt,etc).
+we can also use multiple '?' eg: 'cp file???.txt dir1'
+
+Combining '?' and '*'
+eg : 'cp f?l*.txt dir1'
 
